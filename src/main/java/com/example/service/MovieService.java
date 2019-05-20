@@ -5,6 +5,8 @@ import com.example.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /*Controller is going to call for  Service and Service is going to call DAO*/
 
 @Service
@@ -15,13 +17,12 @@ public class MovieService{
     private MovieDAO movieDAO;
 
     public void save(Movie movie){
-        movie.setIdMovie(null);
         movieDAO.save(movie);
     }
 
-    public Movie findBy(Long id){
-        Movie muvie = movieDAO.findById(id).orElse(null);
-        return muvie;
+    public List<Movie> findByName(String title){
+        List<Movie> movie = movieDAO.findByName(title);
+        return movie;
     }
 
     public void updateMovie (Movie movie){

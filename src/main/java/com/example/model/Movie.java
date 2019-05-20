@@ -20,28 +20,18 @@ public class Movie extends Category implements Serializable {
     private String director;
     private String genreMovie;
 
-    /*Relation between the entitys*/
-//    @ManyToOne
-//    @JoinColumn(name = "category")
-//    private Category category;
-
-    @OneToMany(mappedBy = "movie")
-    private List<ItemRent> itemRents;
 
     /*Default constructor*/
     public Movie(){
         super();
-        itemRents = new ArrayList<ItemRent>();
     }
 
     /*Parametrized Constructor iniciating variables*/
 
-    public Movie(Long idMovie, String director, String genreMovie, Category category, List<ItemRent> itemRents) {
+    public Movie(Long idMovie, String director, String genreMovie, Category category) {
         this.idMovie = idMovie;
         this.director = director;
         this.genreMovie = genreMovie;
-//        this.category = category;
-        this.itemRents = itemRents;
     }
 
     /*Getter and setter*/
@@ -68,20 +58,5 @@ public class Movie extends Category implements Serializable {
     public void setGenreMovie(String genreMovie) {
         this.genreMovie = genreMovie;
     }
-//
-//    public Category getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(Category category) {
-//        this.category = category;
-//    }
 
-    public List<ItemRent> getItemRents() {
-        return itemRents;
-    }
-
-    public void setItemRents(List<ItemRent> itemRents) {
-        this.itemRents = itemRents;
-    }
 }

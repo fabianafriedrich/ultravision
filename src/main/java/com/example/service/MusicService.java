@@ -5,6 +5,8 @@ import com.example.model.Music;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /*Controller is going to call for  Service and Service is going to call DAO*/
 
 @Service
@@ -18,9 +20,9 @@ public class MusicService {
         musicDAO.save(music);
     }
 
-    public Music findBy(Long id){
-        Music music = musicDAO.findById(id).orElse(null);
-        return music;
+    public List<Music> findByName(String title){
+        List<Music> musicList = musicDAO.findByName(title);
+        return musicList;
     }
 
     public void updateMusic (Music music){

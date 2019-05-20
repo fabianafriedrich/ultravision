@@ -20,15 +20,13 @@ public class Rent implements Serializable{
     private Date dateRented;
     private Date dateReturnedRent;
     private boolean rented;
+    @Column(name = "title_name")
+    private String titleName;
 
     /*Relation between tables/classes*/
     @ManyToOne
     @JoinColumn(name = "customer")
     private Customer customer;
-
-    @OneToMany(mappedBy = "rent")
-    private List<ItemRent> itemRents;
-
 
     /*Default constructor*/
     public Rent(){
@@ -37,13 +35,13 @@ public class Rent implements Serializable{
 
     /*Parametrized Constructor iniciating variables*/
 
-    public Rent(Integer idRent, Date dateRented, Date dateReturnedRent, boolean rented, Customer customer, List<ItemRent> itemRents) {
+    public Rent(Integer idRent, Date dateRented, Date dateReturnedRent, boolean rented, Customer customer,String titleName) {
         this.idRent = idRent;
         this.dateRented = dateRented;
         this.dateReturnedRent = dateReturnedRent;
         this.rented = rented;
         this.customer = customer;
-        this.itemRents = itemRents;
+        this.titleName = titleName;
     }
 
     /*Getter and Setter*/
@@ -87,12 +85,12 @@ public class Rent implements Serializable{
         this.customer = customer;
     }
 
-    public List<ItemRent> getItemRents() {
-        return itemRents;
+    public String getTitleName() {
+        return titleName;
     }
 
-    public void setItemRents(List<ItemRent> itemRents) {
-        this.itemRents = itemRents;
+    public void setTitleName(String titleName) {
+        this.titleName = titleName;
     }
 }
 

@@ -5,6 +5,8 @@ import com.example.model.LiveConsert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /*Controller is going to call for  Service and Service is going to call DAO*/
 
 @Service
@@ -19,8 +21,8 @@ public class LiveConsertService {
         liveConsertDAO.save(liveConsert);
     }
 
-    public LiveConsert findBy(Long id){
-        LiveConsert l = liveConsertDAO.findById(id).orElse(null);
+    public List<LiveConsert> findByName(String name){
+        List<LiveConsert> l = liveConsertDAO.findByName(name);
         return l;
     }
 

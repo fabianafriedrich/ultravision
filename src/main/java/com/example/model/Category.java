@@ -1,17 +1,16 @@
 package com.example.model;
 
 
+import com.example.enums.MediaEnum;
+
 import javax.persistence.*;
-import java.time.Year;
-import java.util.ArrayList;
-import java.util.List;
 
 @MappedSuperclass
 public abstract class Category {
 
     private String title;
-    private String media;
-    private Year yearOfRelease;
+    private MediaEnum media;
+    private String yearOfRelease;
 
 
 
@@ -23,7 +22,7 @@ public abstract class Category {
 
     /*Parametrized Constructor iniciating variables*/
 
-    public Category(String title, String media, Year yearOfRelease) {
+    public Category(String title, MediaEnum media, String yearOfRelease) {
         this.title = title;
         this.media = media;
         this.yearOfRelease = yearOfRelease;
@@ -38,19 +37,19 @@ public abstract class Category {
         this.title = title;
     }
 
-    public String getMedia() {
+    public MediaEnum getMedia() {
         return media;
     }
 
-    public void setMedia(String media) {
+    public void setMedia(MediaEnum media) {
         this.media = media;
     }
 
-    public Year getYearOfRelease() {
+    public String getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public void setYearOfRelease(Year yearOfRelease) {
+    public void setYearOfRelease(String yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
 

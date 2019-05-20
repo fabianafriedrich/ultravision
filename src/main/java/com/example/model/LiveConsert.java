@@ -20,33 +20,26 @@ public class LiveConsert extends Category implements Serializable {
     private Long idLiveConsert;
     private String bandLiveConsert;
     private String genreLiveConsert;
-    private Timestamp consertDuration;
 
     /*Relation between the entitys*/
 //    @ManyToOne
 //    @JoinColumn(name = "category")
 //    private Category category;
 
-    @OneToMany(mappedBy = "liveConsert")
-    private List<ItemRent> itemRents;
 
 
     /*Default constructor*/
     public LiveConsert(){
         super();
-        itemRents = new ArrayList<ItemRent>();
     }
 
     /*Parametrized Constructor iniciating variables*/
 
     public LiveConsert(Long idLiveConsert, String bandLiveConsert, String genreLiveConsert,
-                       Timestamp consertDuration, Category category, List<ItemRent> itemRents) {
+                       Timestamp consertDuration, Category category) {
         this.idLiveConsert = idLiveConsert;
         this.bandLiveConsert = bandLiveConsert;
         this.genreLiveConsert = genreLiveConsert;
-        this.consertDuration = consertDuration;
-//        this.category = category;
-        this.itemRents = itemRents;
     }
 
     /*Getter and setter*/
@@ -74,27 +67,4 @@ public class LiveConsert extends Category implements Serializable {
         this.genreLiveConsert = genreLiveConsert;
     }
 
-    public Timestamp getConsertDuration() {
-        return consertDuration;
-    }
-
-    public void setConsertDuration(Timestamp consertDuration) {
-        this.consertDuration = consertDuration;
-    }
-
-//    public Category getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(Category category) {
-//        this.category = category;
-//    }
-
-    public List<ItemRent> getItemRents() {
-        return itemRents;
-    }
-
-    public void setItemRents(List<ItemRent> itemRents) {
-        this.itemRents = itemRents;
-    }
 }

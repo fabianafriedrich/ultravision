@@ -86,6 +86,13 @@ public class Customer implements Serializable {
     public void setPoints(Integer points) {
         this.points = points;
     }
+
+    public String getSubscriptionPlanDescription() {
+        if(this.getSubscriptionPlan()!= null) {
+            return this.getSubscriptionPlan().getDescription();
+        }
+        return "";
+    }
 }
 
 
