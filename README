@@ -1,0 +1,9 @@
+Create ultravision database in your localhost mySQL.
+
+To change the connection to the database, access the application.properties configuration file that is inside the resources package.
+Put your Database settings. ie: user, password, database name. And change the port on my computer mySQL runs on port 3307.
+To run the application you have to run the main method of the UltravisionApplication class that is inside the utravision package.
+
+The application is using JFrame to the GUI, and the back-end Java8 with Spring Framework(Spring Boot, Spring Data JPA) and mySQL database.
+I am not sending a Database because it is just run the application that the tables will be created automatically.
+You will be able to add all the data using the system.
