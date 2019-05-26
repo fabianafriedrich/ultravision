@@ -149,9 +149,6 @@ public class FrameController implements MouseListener, ActionListener {
                 view.error("Sorry Title not found ");
                 view.cancel();
             }
-        }else{
-            view.error("Sorry Title not found");
-            view.cancel();
         }
         if (e.getActionCommand().equals("Find")) {
             String getCus = view.getCustomer().getText();
@@ -168,9 +165,6 @@ public class FrameController implements MouseListener, ActionListener {
                     view.cancel();
                 }
 
-            }else {
-                view.error("Sorry Customer not found");
-                view.cancel();
             }
 
         }
